@@ -77,6 +77,12 @@ void MWLogEmergency(NSString *format, ...);
 #define MWLogEmergency(...)
 #endif
 
+#if MW_COMPILE_TIME_LOG_LEVEL >= ASL_LEVEL_EMERG
+void _logFatal(NSString *format, ...);
+#else
+#define _logFatal(...)
+#endif
+
 #if MW_COMPILE_TIME_LOG_LEVEL >= ASL_LEVEL_ALERT
 void MWLogAlert(NSString *format, ...);
 #else
@@ -95,10 +101,22 @@ void MWLogError(NSString *format, ...);
 #define MWLogError(...)
 #endif
 
+#if MW_COMPILE_TIME_LOG_LEVEL >= ASL_LEVEL_ERR
+void _logError(NSString *format, ...);
+#else
+#define _logError(...)
+#endif
+
 #if MW_COMPILE_TIME_LOG_LEVEL >= ASL_LEVEL_WARNING
 void MWLogWarning(NSString *format, ...);
 #else
 #define MWLogWarning(...)
+#endif
+
+#if MW_COMPILE_TIME_LOG_LEVEL >= ASL_LEVEL_WARNING
+void _logWarn(NSString *format, ...);
+#else
+#define _logWarn(...)
 #endif
 
 #if MW_COMPILE_TIME_LOG_LEVEL >= ASL_LEVEL_NOTICE
@@ -113,9 +131,21 @@ void MWLogInfo(NSString *format, ...);
 #define MWLogInfo(...)
 #endif
 
+#if MW_COMPILE_TIME_LOG_LEVEL >= ASL_LEVEL_INFO
+void _logInfo(NSString *format, ...);
+#else
+#define _logInfo(...)
+#endif
+
 #if MW_COMPILE_TIME_LOG_LEVEL >= ASL_LEVEL_DEBUG
 void MWLogDebug(NSString *format, ...);
 #else
 #define MWLogDebug(...)
+#endif
+
+#if MW_COMPILE_TIME_LOG_LEVEL >= ASL_LEVEL_DEBUG
+void _logDebug(NSString *format, ...);
+#else
+#define _logDebug(...)
 #endif
 
