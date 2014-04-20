@@ -24,4 +24,4 @@ On your APPNAME-Prefix.pch
 #define MW_COMPILE_TIME_LOG_LEVEL ASL_LEVEL_DEBUG
 ```
 
-Replace ASL_LEVEL_DEBUG by ASL_LEVEL_INFO, ASL_LEVEL_WARNING, ASL_LEVEL_ERR, ASL_LEVEL_EMERG accordingly to your build. I recommend set to ASL_LEVEL_ERR on PROD.
+Replace ASL_LEVEL_DEBUG by ASL_LEVEL_INFO, ASL_LEVEL_WARNING, ASL_LEVEL_ERR, or ASL_LEVEL_EMERG accordingly to your build. I recommend set to ASL_LEVEL_ERR on PROD.
